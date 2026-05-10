@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TTG Bexbach e.V. – Tischtennis in Bexbach/Saar</title>
+  <meta name="description" content="Homepage des Tisch-Tennis-Vereins TTG Bexbach e.V. in Bexbach/Saar">
+  <meta name="keywords" content="Tischtennis, TTG, Bexbach, Saarland, Verein, click-tt">
+  <meta name="robots" content="INDEX,NOFOLLOW">
+  <meta name="content-language" content="de">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-900: #14532d;
+      --green-800: #166534;
+      --green-700: #15803d;
+      --green-600: #16a34a;
+      --green-500: #22c55e;
+      --green-100: #dcfce7;
+      --green-50:  #f0fdf4;
+      --gray-900: #111827;
+      --gray-800: #1f2937;
+      --gray-700: #374151;
+      --gray-600: #4b5563;
+      --gray-400: #9ca3af;
+      --gray-200: #e5e7eb;
+      --gray-100: #f3f4f6;
+      --gray-50:  #f9fafb;
+      --white: #ffffff;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.1);
+      --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+      --shadow-lg: 0 10px 15px rgba(0,0,0,.07), 0 4px 6px rgba(0,0,0,.05);
+      --radius: .75rem;
+      --radius-sm: .5rem;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--gray-800);
+      background: var(--gray-50);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green-900);
+      box-shadow: var(--shadow-md);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .nav-brand .ball {
+      width: 28px;
+      height: 28px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,.82);
+      font-size: .88rem;
+      font-weight: 500;
+      padding: .4rem .7rem;
+      border-radius: var(--radius-sm);
+      transition: background .15s, color .15s;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255,255,255,.15);
+      color: var(--white);
+    }
+
+    /* hamburger */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .3rem; }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    @media (max-width: 780px) {
+      .nav-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--green-900);
+        flex-direction: column;
+        align-items: stretch;
+        padding: .5rem 1rem 1rem;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .65rem .9rem; font-size: .95rem; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 100%);
+      color: var(--white);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,.85);
+      margin-bottom: 2rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      justify-content: center;
+    }
+
+    .badge {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      padding: .35rem .9rem;
+      font-size: .85rem;
+      color: var(--white);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .section + .section { padding-top: 0; }
+
+    .section-alt { background: var(--white); }
+
+    .section-alt .section {
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-header .icon {
+      width: 44px;
+      height: 44px;
+      background: var(--green-100);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .section-header h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -.02em;
+    }
+
+    .section-header .section-tag {
+      font-size: .75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--green-600);
+      display: block;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      padding: 1.5rem;
+    }
+
+    /* ── AKTUELLES ── */
+    .aktuelles-card {
+      border-left: 4px solid var(--green-600);
+      padding: 1.75rem;
+    }
+
+    .aktuelles-date {
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--green-700);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .5rem;
+    }
+
+    .aktuelles-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .aktuelles-card p { color: var(--gray-700); margin-bottom: .75rem; }
+    .aktuelles-card p:last-child { margin-bottom: 0; }
+
+    /* ── TERMINE ── */
+    .termine-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .termin-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .termin-date-box {
+      flex-shrink: 0;
+      width: 52px;
+      text-align: center;
+      background: var(--green-600);
+      color: var(--white);
+      border-radius: var(--radius-sm);
+      padding: .4rem .2rem;
+    }
+
+    .termin-date-box .day { font-size: 1.4rem; font-weight: 700; line-height: 1; }
+    .termin-date-box .month { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-top: 2px; }
+    .termin-date-box .year { font-size: .65rem; opacity: .8; }
+
+    .termin-info h4 { font-size: .95rem; font-weight: 600; color: var(--gray-900); }
+    .termin-info p { font-size: .85rem; color: var(--gray-600); margin-top: .2rem; }
+
+    /* ── TRAINING ── */
+    .training-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .training-grid { grid-template-columns: 1fr; }
+    }
+
+    .training-day {
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .training-day h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--green-800);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .training-slot {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: .65rem 0;
+      border-bottom: 1px solid var(--green-100);
+      gap: 1rem;
+    }
+
+    .training-slot:last-child { border-bottom: none; }
+
+    .training-time {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--green-700);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .training-desc { font-size: .85rem; color: var(--gray-700); }
+
+    .training-location {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+    }
+
+    .training-location .loc-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .training-location .loc-text strong { display: block; font-size: .95rem; color: var(--gray-900); }
+    .training-location .loc-text span { font-size: .85rem; color: var(--gray-600); }
+
+    .training-note {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      padding: .9rem 1.1rem;
+      background: #fef9c3;
+      border: 1px solid #fde047;
+      border-radius: var(--radius-sm);
+      margin-top: 1.5rem;
+      font-size: .88rem;
+      color: #713f12;
+    }
+
+    /* ── VORSTAND ── */
+    .vorstand-group-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gray-700);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 1rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--green-100);
+    }
+
+    .vorstand-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .vorstand-card {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+      padding: 1.1rem 1.25rem;
+    }
+
+    .vorstand-role {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--green-700);
+    }
+
+    .vorstand-name { font-size: 1rem; font-weight: 600; color: var(--gray-900); }
+
+    .vorstand-contact { font-size: .83rem; color: var(--gray-600); }
+
+    .vorstand-contact a { color: var(--green-700); text-decoration: none; }
+    .vorstand-contact a:hover { text-decoration: underline; }
+
+    /* ── NEWS ACCORDION ── */
+    .news-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .news-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .news-trigger {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      transition: background .15s;
+    }
+
+    .news-trigger:hover { background: var(--gray-50); }
+    .news-item.open .news-trigger { background: var(--green-50); }
+
+    .news-trigger-date {
+      flex-shrink: 0;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--green-700);
+      background: var(--green-100);
+      padding: .25rem .6rem;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+    }
+
+    .news-trigger-title {
+      flex: 1;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      line-height: 1.3;
+    }
+
+    .news-trigger-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--gray-400);
+      transition: transform .25s;
+    }
+
+    .news-item.open .news-trigger-chevron { transform: rotate(180deg); }
+
+    .news-body {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .news-item.open .news-body { display: block; }
+
+    .news-body p { color: var(--gray-700); margin-top: .85rem; font-size: .93rem; }
+    .news-body p:first-child { margin-top: .85rem; }
+
+    .news-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      margin-top: 1rem;
+    }
+
+    /* ── DOWNLOADS ── */
+    .downloads-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .download-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--gray-800);
+      transition: background .15s;
+    }
+
+    .download-item:hover { background: var(--green-50); }
+
+    .download-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--green-100);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .download-name { flex: 1; font-size: .93rem; font-weight: 500; }
+
+    .download-arrow {
+      color: var(--green-600);
+      font-size: 1.1rem;
+    }
+
+    /* ── LINKS ── */
+    .links-list { display: flex; flex-direction: column; gap: .75rem; }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--gray-800);
+      transition: background .15s;
+    }
+
+    .link-item:hover { background: var(--green-50); }
+
+    .link-item .link-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--green-100);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .link-item .link-text { flex: 1; font-size: .93rem; font-weight: 500; color: var(--green-700); }
+    .link-item:hover .link-text { text-decoration: underline; }
+    .link-item .link-ext { font-size: .8rem; color: var(--gray-400); }
+
+    /* ── IMPRESSUM ── */
+    .impressum-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .impressum-grid { grid-template-columns: 1fr; }
+    }
+
+    .impressum-block { padding: 1.25rem 1.5rem; }
+
+    .impressum-block h3 {
+      font-size: .85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--green-700);
+      margin-bottom: .6rem;
+    }
+
+    .impressum-block p { font-size: .9rem; color: var(--gray-700); line-height: 1.7; }
+    .impressum-block a { color: var(--green-700); }
+
+    .impressum-legal {
+      grid-column: 1 / -1;
+      font-size: .85rem;
+      color: var(--gray-600);
+      line-height: 1.8;
+    }
+
+    .impressum-legal h4 {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin: 1.2rem 0 .4rem;
+    }
+
+    .impressum-legal h4:first-child { margin-top: 0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-900);
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .85rem;
+    }
+
+    footer strong { color: var(--white); }
+
+    /* ── UTILITIES ── */
+    .divider { height: 1px; background: var(--gray-200); margin: 0; }
+
+    .mt-2 { margin-top: .5rem; }
+    .mt-4 { margin-top: 1rem; }
+    .mt-6 { margin-top: 1.5rem; }
+    .mt-8 { margin-top: 2rem; }
+
+    .pill {
+      display: inline-block;
+      background: var(--green-100);
+      color: var(--green-800);
+      font-size: .75rem;
+      font-weight: 600;
+      border-radius: 999px;
+      padding: .2rem .65rem;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ────────────────────────────────── HEADER ── -->
+<header>
+  <nav>
+    <a class="nav-brand" href="#home">
+      <span class="ball">🏓</span>
+      TTG Bexbach e.V.
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#aktuelles">Aktuelles</a></li>
+      <li><a href="#termine">Termine</a></li>
+      <li><a href="#training">Training</a></li>
+      <li><a href="#vorstand">Vorstand</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#downloads">Downloads</a></li>
+      <li><a href="#links">Links</a></li>
+      <li><a href="#impressum">Impressum</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ────────────────────────────────── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>TTG Bexbach e.V.</h1>
+    <p>Tischtennis-Gemeinschaft Bexbach &ndash; Seit 1972 im Saarland</p>
+    <div class="hero-badges">
+      <span class="badge">🏆 1. Bezirksklasse</span>
+      <span class="badge">📍 Oberbexbach</span>
+      <span class="badge">🗓 Training Mo &amp; Fr</span>
+      <span class="badge">👥 Zwei Mannschaften</span>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────────────────────── AKTUELLES ── -->
+<div id="aktuelles">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">📢</div>
+      <div>
+        <span class="section-tag">Neuigkeiten</span>
+        <h2>Aktuelles</h2>
+      </div>
+    </div>
+
+    <div class="card aktuelles-card">
+      <p class="aktuelles-date">25. Januar 2026</p>
+      <h3>TTG Bexbach &ndash; R&uuml;ckrundenstart und Neujahrsempfang</h3>
+      <p>Bexbach &ndash; Einen gelungenen Start in die R&uuml;ckrunde der Tischtennissaison konnte die TTG Bexbach vermelden. Die erste Mannschaft &uuml;berzeugte mit zwei Siegen und festigte damit ihren dritten Tabellenplatz. Besonders erfreulich war der &uuml;berraschende 9:5-Erfolg gegen den SV Remmesweiler II, gegen den man in der Vorrunde noch 2:9 unterlag. Zudem best&auml;tigte TTG 1 mit einem weiteren Sieg gegen Niederlinxweiler 3 (9:4) den positiven R&uuml;ckrundenauftakt.</p>
+      <p>Weniger erfolgreich verlief der R&uuml;ckrundenauftakt f&uuml;r die zweite Mannschaft der TTG Bexbach, die ihre beiden Spiele zum Start der R&uuml;ckrunde leider verlor.</p>
+      <p>Am 17. Januar fand im Restaurant &bdquo;Zum Hei&szlig;en Ofen&ldquo; der traditionelle Neujahrsempfang der TTG Bexbach statt. Der Vorsitzende Rainer Skeries begr&uuml;&szlig;te die anwesenden G&auml;ste und nutzte die Gelegenheit, sich bei Rita Sonntag-M&uuml;ller f&uuml;r ihre kontinuierliche Unterst&uuml;tzung des Vereins zu bedanken. Au&szlig;erdem sprach Kerstin Edig einen besonderen Dank an Thomas Wagmann f&uuml;r die geleistete Trainerarbeit aus.</p>
+      <p>Sportlich geht es f&uuml;r die TTG Bexbach bereits am 7. Februar mit den n&auml;chsten Heimspielen weiter. Dabei trifft TTG 1 auf die zweite Mannschaft der DJK TT Ottweiler, w&auml;hrend TTG 2 gegen den TTC Kleinblittersdorf III antritt. Ein weiterer H&ouml;hepunkt im Vereinskalender sind die Einzel-Vereinsmeisterschaften, die am 13. Februar ausgetragen werden. Zwecks besserer Planung wird um Anmeldung bis zum 9. Februar bei Timo Sch&auml;fer gebeten.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── TERMINE ── -->
+<div class="section-alt" id="termine">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">📅</div>
+      <div>
+        <span class="section-tag">Kalender</span>
+        <h2>Termine</h2>
+      </div>
+    </div>
+
+    <div class="termine-grid">
+      <div class="card termin-card">
+        <div class="termin-date-box">
+          <div class="day">17</div>
+          <div class="month">Jan</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="termin-info">
+          <h4>Neujahrsempfang</h4>
+          <p>Ab 18:00 Uhr in der Gastst&auml;tte &bdquo;Zum hei&szlig;en Ofen&ldquo;</p>
+        </div>
+      </div>
+
+      <div class="card termin-card">
+        <div class="termin-date-box">
+          <div class="day">06</div>
+          <div class="month">Mrz</div>
+          <div class="year">2026</div>
+        </div>
+        <div class="termin-info">
+          <h4>Vorstandssitzung</h4>
+          <p>Details werden noch bekanntgegeben</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── TRAINING ── -->
+<div id="training">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">🏋️</div>
+      <div>
+        <span class="section-tag">Sport</span>
+        <h2>Training</h2>
+      </div>
+    </div>
+
+    <div class="training-location">
+      <span class="loc-icon">📍</span>
+      <div class="loc-text">
+        <strong>Schulturnhalle der Grundschule Oberbexbach</strong>
+        <span>Bexbach-Oberbexbach</span>
+      </div>
+    </div>
+
+    <div class="training-grid">
+      <div class="training-day">
+        <h3>🗓 Montag</h3>
+        <div class="training-slot">
+          <span class="training-time">18:30 – 21:00</span>
+          <span class="training-desc">Aktive, Senioren und Hobbyspieler</span>
+        </div>
+        <div class="training-slot">
+          <span class="training-time">19:30 – 21:00</span>
+          <span class="training-desc">Systemtraining <span class="pill">nur gerade KW</span></span>
+        </div>
+      </div>
+
+      <div class="training-day">
+        <h3>🗓 Freitag</h3>
+        <div class="training-slot">
+          <span class="training-time">18:30 – 21:00</span>
+          <span class="training-desc">Aktive, Senioren und Hobbyspieler</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="training-note">
+      <span>⚠️</span>
+      <span>In den <strong>Schulferien</strong> findet in der Regel kein Training statt!</span>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── VORSTAND ── -->
+<div class="section-alt" id="vorstand">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">👥</div>
+      <div>
+        <span class="section-tag">Vereinsf&uuml;hrung</span>
+        <h2>Vorstand</h2>
+      </div>
+    </div>
+
+    <p class="vorstand-group-title">Gesch&auml;ftsf&uuml;hrender Vorstand</p>
+    <div class="vorstand-grid">
+      <div class="card vorstand-card">
+        <span class="vorstand-role">1. Vorsitzender</span>
+        <span class="vorstand-name">Rainer Skeries</span>
+        <div class="vorstand-contact">
+          <a href="mailto:rainer@skeries.de">rainer@skeries.de</a><br>
+          Oberbexbacher Str. 48, 66450 Bexbach<br>
+          Tel: 06826 3156
+        </div>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">2. Vorsitzender</span>
+        <span class="vorstand-name">Volker Stumpf</span>
+        <div class="vorstand-contact">
+          <a href="mailto:volker.stumpf3@gmx.de">volker.stumpf3@gmx.de</a>
+        </div>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Gesch&auml;ftsf&uuml;hrer</span>
+        <span class="vorstand-name">Timo Sch&auml;fer</span>
+        <div class="vorstand-contact">
+          <a href="mailto:schaefertimo@t-online.de">schaefertimo@t-online.de</a><br>
+          Kirchenweg 10, 66450 Bexbach
+        </div>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Stellv. Gesch&auml;ftsf&uuml;hrer</span>
+        <span class="vorstand-name">Yannic Muskalla</span>
+        <div class="vorstand-contact">
+          <a href="mailto:yannic.muskalla@yahoo.de">yannic.muskalla@yahoo.de</a>
+        </div>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Hauptkassierer</span>
+        <span class="vorstand-name">Thomas Wagmann</span>
+        <div class="vorstand-contact">
+          <a href="mailto:thomas.wagmann@gmx.de">thomas.wagmann@gmx.de</a>
+        </div>
+      </div>
+    </div>
+
+    <p class="vorstand-group-title">Erweiterter Vorstand</p>
+    <div class="vorstand-grid">
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Sportausschussvorsitzender</span>
+        <span class="vorstand-name" style="color:var(--gray-400);font-style:italic">vakant</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Unterkassierer</span>
+        <span class="vorstand-name" style="color:var(--gray-400);font-style:italic">vakant</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Ger&auml;tewart</span>
+        <span class="vorstand-name">J&uuml;rgen B&ouml;hm</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Jugendwart</span>
+        <span class="vorstand-name" style="color:var(--gray-400);font-style:italic">vakant</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Damenwart</span>
+        <span class="vorstand-name" style="color:var(--gray-400);font-style:italic">vakant</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Pressewart</span>
+        <span class="vorstand-name">Timo Sch&auml;fer</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Kassenpr&uuml;fer</span>
+        <span class="vorstand-name">Wolfgang Cordes &amp; Felix Blatt</span>
+      </div>
+
+      <div class="card vorstand-card">
+        <span class="vorstand-role">Beisitzer</span>
+        <span class="vorstand-name">Kerstin Edig &amp; Bernd Hamann</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── NEWS ── -->
+<div id="news">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">📰</div>
+      <div>
+        <span class="section-tag">Archiv</span>
+        <h2>News</h2>
+      </div>
+    </div>
+
+    <div class="news-list">
+
+      <!-- 2025 – open by default -->
+      <div class="news-item open">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">05.07.2025</span>
+          <span class="news-trigger-title">TTG Bexbach blickt auf erfolgreiche Saison zur&uuml;ck &ndash; Vorstand im Amt best&auml;tigt</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Die TTG Bexbach hat die Saison 2024/2025 erfolgreich abgeschlossen. Die erste Mannschaft erreichte einen starken 4. Platz in der ersten Bezirksklasse und zeigte &uuml;ber die gesamte Spielzeit hinweg konstante Leistungen. Auch die zweite Mannschaft konnte sich behaupten und belegte am Ende einen soliden 7. Platz der zweiten Bezirksklasse.</p>
+          <p>In der kommenden Saison wird die erste Mannschaft weiterhin in der ersten Bezirksklasse an der Platte stehen. Jedoch kann die zweite Mannschaft, aufgrund personeller Ver&auml;nderungen, nur als 4er-Mannschaft am Spielbetrieb teilnehmen.</p>
+          <p>Im Rahmen der diesj&auml;hrigen Mitgliederversammlung, welche bereits Ende Mai stattfand, wurde der bisherige Vorstand (1. Vorsitzender Rainer Skeries, 2. Vorsitzender Volker Stumpf, Gesch&auml;ftsf&uuml;hrer Timo Sch&auml;fer, stellv. Gesch&auml;ftsf&uuml;hrer Yannic Muskalla, Kassierer Thomas Wagmann) im Amt best&auml;tigt. Die Vereinsf&uuml;hrung bedankt sich f&uuml;r das entgegengebrachte Vertrauen und freut sich auf die kommende Saison mit neuen sportlichen Herausforderungen.</p>
+          <p>Um die Zeit zwischen den Spielzeiten zu &uuml;berbr&uuml;cken, wurde am 13. Juni das dritte Brettchenturnier ausgetragen. Aufgrund der Einfachheit des Schl&auml;gers kann man beim Schlagen nur ganz wenig Schnitt erzeugen, wodurch die Ballwechsel l&auml;nger dauern und der Punktgewinn richtig &bdquo;erarbeitet&ldquo; werden muss. Die Veranstaltung wurde als 2er-Mannschaftsturnier mit sieben Mannschaften ausgetragen. Am Ende setzten sich Volker Stumpf zusammen mit Johannes Wagmann durch.</p>
+          <img src="galerie/2025_Aktive1.jpg" alt="Aktive 2025 (1)">
+          <img src="galerie/2025_Aktive2.jpg" alt="Aktive 2025 (2)">
+        </div>
+      </div>
+
+      <div class="news-item open">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">02.02.2025</span>
+          <span class="news-trigger-title">TTG Bexbach – Ergebnisse und Einladung Neujahrsempfang</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <img src="galerie/20250202_PM.jpg" alt="Gruppenfoto Vereinsmeisterschaften">
+          <p>Das obligatorische Gruppenfoto am Ende der Vereinsmeisterschaften.</p>
+          <p>Das Jahr ist noch jung, jedoch sind bereits drei Spiele der R&uuml;ckrunde gespielt. Die erste Mannschaft der TTG ist noch ohne Niederlage. Lediglich beim Spiel gegen den Lokalrivalen TTF Homburg-Erbach 1 musste man sich mit einem Remis begn&uuml;gen. Zur Zeit belegt TTG 1 den dritten Platz in der 1. Bezirksklasse und hat nur einen Punkt Abstand zum Relegationsplatz.</p>
+          <p>Bei der zweiten Mannschaft der TTG reichte es bisher nur zu einem Punkt in der R&uuml;ckrunde. Diesen holten sie beim 8:8 gegen die dritte Mannschaft des TTC Neuweiler.</p>
+          <p>Au&szlig;erdem wurden am 17. Januar die Doppel-Vereinsmeisterschaften ausgetragen. Am Ende setzte sich in einem spannenden F&uuml;nf-Satz-Spiel Andrea Sorg an der Seite von Yannic Muskalla durch. Platz 2 belegten Timo Sch&auml;fer / Johannes Wagmann. Erstmals wurde auch Platz drei ausgespielt: Kerstin Edig an der Seite von Simon Sch&ouml;ner.</p>
+          <p>Am kommenden Samstag spielen beide Mannschaften zu Hause. Die TTG 1 begr&uuml;&szlig;t die dritte Mannschaft des TTC Altenwald. Die TTG 2 tritt gegen TTC Oberw&uuml;rzbach 4 an. Ferner l&auml;dt die TTG ihre Mitglieder zum Neujahrsempfang am 22.2. ab 18:00 Uhr in den Hei&szlig;en Ofen ein.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">18.11.2024</span>
+          <span class="news-trigger-title">TTG Bexbach vor Spitzenspiel gegen DJK Bildstock</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Am vorletzten Spieltag der Hinrunde begr&uuml;&szlig;t die erste Mannschaft der TTG die DJK Bildstock. Bildstock als Tabellenf&uuml;hrer geht, mit nur einem Punkt Vorsprung vor der TTG, als leichter Favorit in das Spiel. Zeitgleich spielen auch noch die zweiten Mannschaften der beiden Vereine gegeneinander.</p>
+          <p>Auch wenn die Vorrunde noch nicht abgeschlossen ist, kann f&uuml;r diese eine positive Bilanz gezogen werden. Die erste Mannschaft ist im oberen Tabellendrittel zu finden. Die zweite Mannschaft befindet sich im Mittelfeld der Tabelle.</p>
+          <p>Am letzten Spieltag der Vorrunde (7. Dezember) ist die TTG I zu Gast beim TV Limbach III und die TTG II steht bei der DJK Ottweiler II an der Platte. Zum Abschluss des Jahres ermittelt die TTG am 13.12. noch den Vereinsmeister im Doppel.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">22.09.2024</span>
+          <span class="news-trigger-title">TTG Bexbach &ndash; ausgeglichener Saisonstart</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Die ersten beiden Spieltage der Saison sind vorbei und die Tischtennisgemeinschaft Bexbach blickt auf zwei ausgeglichene Spieltage zur&uuml;ck. Das Auftaktmatch bestritt die TTG 2 gegen den TV Quieschied 4, welches mit einer ungl&uuml;cklichen Niederlage endete (7:9). Mit dem selben Ergebnis jedoch zu Gunsten der TTG gewann die TTG 2 ihr zweites Spiel 9:7 bei der dritten Mannschaft des TTC Neuweiler.</p>
+          <p>Die TTG 1 begr&uuml;&szlig;te bei ihrem Saisonauftakt die dritte Mannschaft des TV Quierschied und siegte unerwartet deutlich mit 9:1. Beim zweiten Spiel beim Lokalderby gegen die Tischtennisfreunde Homburg-Erbach endete das Spiel nach mehr als drei Stunden Spielzeit mit 7:9 f&uuml;r Erbach.</p>
+          <img src="galerie/2024_Herren1.jpg" alt="Herren 1 Saison 2024">
+          <img src="galerie/2024_Herren2.jpg" alt="Herren 2 Saison 2024">
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">16.06.2024</span>
+          <span class="news-trigger-title">Die TTG Bexbach beim Blumengartenfest</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <img src="galerie/20240616_Blumengartenfest.jpg" alt="Blumengartenfest 2024">
+          <p>Mit den herannahenden Sommerferien geht die Saison 23/24 so langsam zu Ende. Die TTG nahm zum Anlass, sich in Bexbach beim diesj&auml;hrigen Blumengartenfest zu pr&auml;sentieren. &Uuml;ber den Tag hinweg waren zahlreiche Besucher am Stand.</p>
+          <p>F&uuml;r die kommende Spielzeit nimmt die TTG wieder mit zwei Mannschaften am Spielbetrieb teil, mit dem erfreulichen Unterschied, dass zwei 6er-Mannschaften gemeldet werden konnten.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">21.04.2024</span>
+          <span class="news-trigger-title">TTG Bexbach &ndash; Saisonabschluss 2023/24</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Am vergangenen Samstag bestritt die TTG Bexbach mit ihren beiden Mannschaften den letzten Spieltag in der Saison 23/24. Die erste Mannschaft war zu Gast beim TV Breitfurt. Bereits vor dem letzten Spieltag stand fest, dass die TTG 1 nicht mehr vom dritten Tabellenplatz zu verdr&auml;ngen war.</p>
+          <p>Die neu gemeldete zweite Mannschaft beendet ihre erste Spielzeit auf dem achten Tabellenplatz &ndash; ein ordentliches Ergebnis f&uuml;r eine Neuling-Mannschaft in einer Klasse mit gut eingespielten Vereinen.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">24.02.2024</span>
+          <span class="news-trigger-title">Die TTG Bexbach in neuem Gewand &ndash; Trainingsanz&uuml;ge und Vereinsmeister</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Seit gut f&uuml;nf Jahren ist die TTG Bexbach zu Gast im Hei&szlig;en Ofen. Aufgrund dieser langj&auml;hrigen Beziehung lag es nahe, Rita M&uuml;ller-Sonntag um Unterst&uuml;tzung bei der Beschaffung der Trainingsanz&uuml;ge zu bitten. Auch Walter Weiland, eines der letzten Gr&uuml;ndungsmitglieder der TTG, unterst&uuml;tzte die Beschaffung der Trainingsanz&uuml;ge.</p>
+          <p>Einen Tag vor dem Neujahrsempfang wurde der Vereinsmeister (Einzel) f&uuml;r die Saison 23/24 ermittelt. &Uuml;ber den Abend hinweg wurden 33 Partien gespielt. Am Ende siegte Simon Sch&ouml;ner vor Andreas Resch. Im Doppel siegte die Paarung B&ouml;hm / Resch.</p>
+          <img src="galerie/20240217_ta.jpg" alt="Trainingsanzüge 2024">
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">02.09.2023</span>
+          <span class="news-trigger-title">Neue Trikots f&uuml;r die TTG Bexbach dank Stadtrad Homburg</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Die TTG Bexbach nimmt nach vier Jahren wieder mit zwei Mannschaften am Spielbetrieb des STTB teil. Volker Stumpf gelang es, die Firma Stadtrad Homburg als Sponsor f&uuml;r neue Trikots zu gewinnen. Im Rahmen eines Freundschaftsspiels gegen den TTC Lautzkirchen bedankte sich der erste Vorsitzende Rainer Skeries bei Meik Nicklas sowie Volker Stumpf f&uuml;r die Unterst&uuml;tzung.</p>
+          <img src="galerie/20230901_Trikot.jpg" alt="Trikotübergabe 2023">
+          <p>Trikot&uuml;bergabe mit Volker Stumpf, Rainer Skeries und Meik Niklas (v.l.n.r.).</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">18.06.2023</span>
+          <span class="news-trigger-title">Erstes Bexbacher Brettchenturnier f&uuml;r 2er-Mannschaften</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Beim ersten Brettchenturnier, welches am Freitag den 16.06. in der Turnhalle in Oberbexbach ausgetragen wurde, siegte die Paarung Thomas Wagmann / Felix Blatt, die sich nur aufgrund des besseren Satzverh&auml;ltnisses vor Andrea Sorg / J&ouml;rg Sommer durchsetzte. Den dritten Rang belegte Georg Betz an der Seite von Volker Stumpf.</p>
+          <p>Mit 20 Teilnehmern (10 Mannschaften) war die Teilnehmerzahl au&szlig;ergew&ouml;hnlich hoch. Dank guter Versorgung mit Speis und Trank wurde die Zeit fast zur Nebensache.</p>
+          <img src="galerie/20230618_brettchen.jpg" alt="Brettchenturnier 2023">
+          <p>Der erste Vorsitzende Rainer Skeries ehrt die Sieger des Turniers.</p>
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">02.10.2022</span>
+          <span class="news-trigger-title">SR3 Landpartie im Blumengarten</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Die TTG nimmt an der Veranstaltung mit einem Infostand zum Thema &bdquo;Frei.Zeit.Tischtennis!&ldquo; teil. Alle Interessierten waren herzlich willkommen im Musikpavillion im Bexbacher Blumengarten. Auch unser B&uuml;rgermeister besuchte uns auf ein Match am Mini-Tisch.</p>
+          <img src="galerie/20221002_1.jpg" alt="SR3 Landpartie 2022 (1)">
+          <img src="galerie/20221002_2.jpg" alt="SR3 Landpartie 2022 (2)">
+          <img src="galerie/20221002_3.jpg" alt="SR3 Landpartie 2022 (3)">
+          <img src="galerie/20221009_PM.jpg" alt="SR3 Landpartie 2022 (4)">
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">02.05.2022</span>
+          <span class="news-trigger-title">TTG Bexbach wird Meister in der 2. Bezirksklasse Ost</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Die Saison 2021/22 geht f&uuml;r die TTG erfolgreich zu Ende. Die Herrenmannschaft wurde Meister in der 2. Bezirksklasse Ost und steigt in die 1. Bezirksklasse auf. Der Vorstand gratuliert der Mannschaft ganz herzlich f&uuml;r die hervorragende Saisonleistung und w&uuml;nscht viel Erfolg f&uuml;r die kommende Runde, die im September 2022 startet.</p>
+          <img src="galerie/20220504_tabelle.jpg" alt="Tabelle Meisterschaft 2022">
+          <img src="galerie/20220504_spieler.jpg" alt="Mannschaft Meisterschaft 2022">
+        </div>
+      </div>
+
+      <div class="news-item">
+        <button class="news-trigger" onclick="toggleNews(this)">
+          <span class="news-trigger-date">15.01.2023</span>
+          <span class="news-trigger-title">Start ins neue Jahr 2023 &ndash; R&uuml;ckrunde und Neujahrsempfang</span>
+          <svg class="news-trigger-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+        </button>
+        <div class="news-body">
+          <p>Das Jahr 2023 ist noch nicht alt und schon blickt die TTG Bexbach auf einige Ereignisse zur&uuml;ck. Beim Neujahrsempfang am 7. Januar wurden die Vereinsmeister geehrt: Im Einzel siegte Thomas Wagmann, den Doppeltitel errang Kerstin Edig an der Seite von Timo Sch&auml;fer.</p>
+          <p>Am 14.01 startete die Herrenmannschaft mit einem 10:0-Sieg gegen die zweite Mannschaft des TV Breitfurt in die R&uuml;ckrunde.</p>
+          <img src="galerie/20230115_PM.jpg" alt="Neujahrsempfang 2023">
+          <p>Rainer Skeries (rechts) ehrt die Vereinsmeister Kerstin Edig, Timo Sch&auml;fer und Thomas Wagmann (v.l.n.r.)</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── DOWNLOADS ── -->
+<div class="section-alt" id="downloads">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">📥</div>
+      <div>
+        <span class="section-tag">Formulare &amp; Dokumente</span>
+        <h2>Downloads</h2>
+      </div>
+    </div>
+
+    <div class="card downloads-list">
+      <a class="download-item" href="Beitrittserkl%E4rung_komplett_2019.pdf" target="_blank">
+        <div class="download-icon">📄</div>
+        <span class="download-name">Beitrittserkl&auml;rung, SEPA-Lastschriftsformular und Datenschutzerkl&auml;rung</span>
+        <span class="download-arrow">↓</span>
+      </a>
+      <div class="divider"></div>
+      <a class="download-item" href="TischTennisGemeinschaft_Bexbach_e_V_SATZUNG.pdf" target="_blank">
+        <div class="download-icon">📄</div>
+        <span class="download-name">Vereinssatzung der TTG Bexbach e.V.</span>
+        <span class="download-arrow">↓</span>
+      </a>
+      <div class="divider"></div>
+      <a class="download-item" href="TTG_50-Jahre_REV1.pdf" target="_blank">
+        <div class="download-icon">📄</div>
+        <span class="download-name">Festschrift zum 50-j&auml;hrigen Jubil&auml;um der TTG Bexbach</span>
+        <span class="download-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── LINKS ── -->
+<div id="links">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">🔗</div>
+      <div>
+        <span class="section-tag">Externe Seiten</span>
+        <h2>Links</h2>
+      </div>
+    </div>
+
+    <div class="card links-list">
+      <a class="link-item" href="https://www.mytischtennis.de/click-tt/STTB/25--26/ligen/1._Bezirksklasse_Gr._B/gruppe/495308/tabelle/gesamt" target="_blank" rel="noopener">
+        <span class="link-icon">🏆</span>
+        <span class="link-text">Ergebnisdienst &ndash; Herren 1 (1. Bezirksklasse Gruppe B)</span>
+        <span class="link-ext">click-tt ↗</span>
+      </a>
+      <div class="divider"></div>
+      <a class="link-item" href="https://www.mytischtennis.de/click-tt/STTB/25--26/ligen/4er_Mannschaft_Gr._B/gruppe/495330/tabelle/gesamt" target="_blank" rel="noopener">
+        <span class="link-icon">🏓</span>
+        <span class="link-text">Ergebnisdienst &ndash; Herren 2 (4er Mannschaft Gruppe B)</span>
+        <span class="link-ext">click-tt ↗</span>
+      </a>
+      <div class="divider"></div>
+      <a class="link-item" href="http://tischtennis.saarland" target="_blank" rel="noopener">
+        <span class="link-icon">🌐</span>
+        <span class="link-text">Saarl&auml;ndischer Tischtennis Bund (STTB)</span>
+        <span class="link-ext">tischtennis.saarland ↗</span>
+      </a>
+      <div class="divider"></div>
+      <a class="link-item" href="http://www.tischtennis.de" target="_blank" rel="noopener">
+        <span class="link-icon">🌐</span>
+        <span class="link-text">Deutscher Tischtennis Bund (DTTB)</span>
+        <span class="link-ext">tischtennis.de ↗</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── IMPRESSUM ── -->
+<div class="section-alt" id="impressum">
+  <div class="section">
+    <div class="section-header">
+      <div class="icon">⚖️</div>
+      <div>
+        <span class="section-tag">Rechtliches</span>
+        <h2>Impressum</h2>
+      </div>
+    </div>
+
+    <div class="impressum-grid">
+      <div class="card impressum-block">
+        <h3>Angaben gem&auml;&szlig; &sect; 5 TMG</h3>
+        <p>TTG Bexbach e.V.</p>
+      </div>
+
+      <div class="card impressum-block">
+        <h3>Vertreten durch</h3>
+        <p>Rainer Skeries<br>Oberbexbacher Str. 48<br>66450 Bexbach</p>
+      </div>
+
+      <div class="card impressum-block">
+        <h3>Kontakt</h3>
+        <p>Telefon: 06826 / 3156<br>E-Mail: <a href="mailto:rainer@skeries.de">rainer@skeries.de</a></p>
+      </div>
+
+      <div class="card impressum-block">
+        <h3>Registereintrags</h3>
+        <p>Eintragung im Vereinsregister<br>Registergericht: Amtsgericht Homburg</p>
+      </div>
+
+      <div class="card impressum-block">
+        <h3>Aufsichtsbeh&ouml;rde</h3>
+        <p>Finanzamt Saarbr&uuml;cken</p>
+      </div>
+
+      <div class="card impressum-block">
+        <h3>Verantwortlich f&uuml;r den Inhalt (&sect; 55 Abs. 2 RStV)</h3>
+        <p>Rainer Skeries<br>Oberbexbacher Str. 48<br>66450 Bexbach</p>
+      </div>
+
+      <div class="card impressum-block impressum-legal" style="grid-column:1/-1">
+        <h4>Streitschlichtung</h4>
+        <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h4>Haftung f&uuml;r Inhalte</h4>
+        <p>Als Diensteanbieter sind wir gem&auml;&szlig; &sect; 7 Abs.1 TMG f&uuml;r eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach &sect;&sect; 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, &uuml;bermittelte oder gespeicherte fremde Informationen zu &uuml;berwachen oder nach Umst&auml;nden zu forschen, die auf eine rechtswidrige T&auml;tigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unber&uuml;hrt. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+        <h4>Haftung f&uuml;r Links</h4>
+        <p>Unser Angebot enth&auml;lt Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb k&ouml;nnen wir f&uuml;r diese fremden Inhalte auch keine Gew&auml;hr &uuml;bernehmen. F&uuml;r die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+        <h4>Urheberrecht</h4>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien dieser Seite sind nur f&uuml;r den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────────────────────────── FOOTER ── -->
+<footer>
+  <p><strong>TTG Bexbach e.V.</strong> &ndash; Tischtennis-Gemeinschaft Bexbach seit 1972</p>
+  <p style="margin-top:.4rem">&copy; <span id="year"></span> TTG Bexbach e.V. &middot; Alle Rechte vorbehalten</p>
+</footer>
+
+<script>
+  // Current year in footer
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // News accordion
+  function toggleNews(btn) {
+    const item = btn.closest('.news-item');
+    item.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
