@@ -128,6 +128,42 @@
       line-height: 1.75;
     }
 
+    .attend-note {
+      margin-top: 1.6rem;
+      padding: 1.3rem 1.6rem;
+      background: var(--surface);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      text-align: center;
+    }
+
+    .attend-note .attend-heading {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .attend-note p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .attend-note a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid var(--accent);
+      transition: opacity 0.15s;
+    }
+
+    .attend-note a:hover { opacity: 0.7; }
+
     /* ── Location ── */
     .location-block {
       background: var(--surface);
@@ -463,6 +499,10 @@
       structure of practical and epistemic reasons, how neural networks may be explained using reasons, the coherence of AI preference orderings, and the broader question
       of what it would mean for an AI system to be genuinely reason-responsive.
     </p>
+    <div class="attend-note">
+      <div class="attend-heading">Interested in attending?</div>
+      <p>Send us a short mail at <a href="mailto:yannic.muskalla@dfki.de">yannic.muskalla@dfki.de</a> and we'll get back to you.</p>
+    </div>
   </section>
 
   <!-- Location -->
