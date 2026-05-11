@@ -296,6 +296,84 @@
     tr.row-special td   { background: var(--special-bg); }
     tr.row-tba .col-title em { color: #b0aca5; }
 
+    /* ── Organizers ── */
+    .organizers-grid {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    .organizer-card {
+      flex: 1;
+      min-width: 180px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    .organizer-card .org-name {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .organizer-card .org-affiliation {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .organizer-card .org-email {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .organizer-card .org-email a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .organizer-card .org-email a:hover {
+      border-color: var(--accent);
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 0.75rem 1.3rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
     /* ── Funding ── */
     .funding {
       border-top: 1px solid var(--border);
@@ -366,10 +444,17 @@
   </div>
 </header>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#location">Location</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#organizers">Organizers</a>
+</nav>
+
 <main>
 
   <!-- Abstract -->
-  <section class="abstract">
+  <section id="about" class="abstract">
     <h2>About</h2>
     <p>
       How should artificial intelligence systems respond to normative reasons — and can they? This
@@ -381,7 +466,7 @@
   </section>
 
   <!-- Location -->
-  <section>
+  <section id="location">
     <h2>Location</h2>
     <div class="location-block">
       <div class="venue-name">DFKI Saarbrücken &mdash; VisRoom</div>
@@ -402,7 +487,7 @@
   </section>
 
   <!-- Schedule -->
-  <section>
+  <section id="schedule">
     <h2>Schedule</h2>
     <table class="schedule-table">
       <thead>
@@ -458,7 +543,7 @@
 
         <tr class="row-special">
           <td class="col-time">14:00 – 15:00</td>
-          <td class="col-speaker">GRACE</td>
+          <td class="col-speaker">RAIME</td>
           <td class="col-title">GRACE</td>
         </tr>
 
@@ -470,8 +555,8 @@
 
         <tr class="row-tba">
           <td class="col-time">15:15 – 16:15</td>
-          <td class="col-speaker">Luxemburg</td>
-          <td class="col-title"><em>Title TBA</em></td>
+          <td class="col-speaker">Liuwen YU</td>
+          <td class="col-title"><em>Luxemburgisch A1</em></td>
         </tr>
 
         <tr class="row-break">
@@ -482,12 +567,38 @@
 
         <tr class="row-tba">
           <td class="col-time">16:30 – 17:30</td>
-          <td class="col-speaker">Luxemburg</td>
-          <td class="col-title"><em>Title TBA</em></td>
+          <td class="col-speaker">Leon van der Torre</td>
+          <td class="col-title"><em>Luxemburgisch A2</em></td>
         </tr>
 
       </tbody>
     </table>
+  </section>
+
+  <!-- Organizers -->
+  <section id="organizers">
+    <h2>Organizers</h2>
+    <div class="organizers-grid">
+
+      <div class="organizer-card">
+        <div class="org-name">Kevin Baum</div>
+        <div class="org-affiliation">DFKI &mdash; Research Group RAIME</div>
+        <div class="org-email"><a href="mailto:kevin.baum@dfki.de">kevin.baum@dfki.de</a></div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="org-name">Andre Steingrüber</div>
+        <div class="org-affiliation">DFKI &mdash; Research Group RAIME</div>
+        <div class="org-email"><a href="mailto:andre.steingrueber@dfki.de">andre.steingrueber@dfki.de</a></div>
+      </div>
+
+      <div class="organizer-card">
+        <div class="org-name">Yannic Muskalla</div>
+        <div class="org-affiliation">DFKI &mdash; Research Group RAIME</div>
+        <div class="org-email"><a href="mailto:yannic.muskalla@dfki.de">yannic.muskalla@dfki.de</a></div>
+      </div>
+
+    </div>
   </section>
 
 </main>
