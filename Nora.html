@@ -20,6 +20,11 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       font-family: 'Georgia', serif;
       background: var(--bg);
@@ -267,8 +272,14 @@
     #lightbox-close:hover { opacity: 1; }
 
     /* ── Schedule ── */
+    .schedule-wrapper {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     .schedule-table {
       width: 100%;
+      min-width: 480px;
       border-collapse: collapse;
       font-family: 'Helvetica Neue', Arial, sans-serif;
       font-size: 0.95rem;
@@ -389,7 +400,12 @@
       justify-content: center;
       gap: 0;
       font-family: 'Helvetica Neue', Arial, sans-serif;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
     }
+
+    nav::-webkit-scrollbar { display: none; }
 
     nav a {
       display: inline-block;
@@ -529,6 +545,7 @@
   <!-- Schedule -->
   <section id="schedule">
     <h2>Schedule</h2>
+    <div class="schedule-wrapper">
     <table class="schedule-table">
       <thead>
         <tr>
@@ -613,6 +630,7 @@
 
       </tbody>
     </table>
+    </div>
   </section>
 
   <!-- Organizers -->
